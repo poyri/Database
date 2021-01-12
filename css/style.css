@@ -1,0 +1,251 @@
+/* common */
+/* large screen */
+:root {
+	/* --main-color: 137,114,91; */
+	/* --main-color: 106,96,85; */
+	--main-color: 0, 145, 100;
+	--sub-color: 155, 209, 192;
+	--background-color: 246, 246, 246;
+	--font-color: 77, 74, 70;
+	--link-color: 0, 92, 230;
+	background-color: rgb(var(--background-color));
+	color: rgb(77, 74, 70);
+	--font-size: 16px;
+	font-size: var(--font-size);
+	--margin-top: 50px;
+}
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	min-width: 900px;
+}
+
+img {
+	margin: 0 auto;
+	vertical-align: calc(var(--font-size) *(-0.35))
+}
+
+a {
+	text-decoration: none;
+	color: rgba(var(--main-color));
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
+p>a {
+	text-decoration: none;
+	color: rgba(var(--link-color), 0.8);
+}
+
+p>a:hover, p>a:active {
+	color: rgba(var(--link-color),1.0);
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal;
+}
+h1 {
+	border-bottom: 1.5px solid rgba(var(--font-color),0.3);
+}
+h2,h3,h4,h5,h6 {
+	padding-top: 1em;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0.5em;
+}
+
+textarea {
+	border: 1px solid rgb(var(--main-color));
+	border-radius: 0.5em;
+	padding: 0.5em;
+	flex-grow: 1;
+	height: 120px;
+	line-height: 1.2;
+	font-size: 85%;
+	font-family: inherit;
+	background-color: rgb(var(--background-color));
+}
+
+textarea:focus {
+	outline: none;
+}
+
+input, button, textarea, select {
+	outline: none;
+}
+
+table {
+	color: #555;
+	border-collapse: collapse;
+	border: solid 2px rgb(var(--main-color));/*表全体を線で囲う*/
+	font-size: 85%;
+}
+table th, table td {
+  border: solid 1px rgb(var(--main-color));
+}
+
+
+#header_over {
+	position: fixed;
+	z-index: -1;
+	background-color: #fbfbfb;
+	background-image: linear-gradient(to bottom,#ffffff 50%,#f6f6f6 100%);
+	background-position: bottom left;
+	width: 100%;
+	height: 5em;
+}
+
+#container {
+	margin: 0 auto;
+	padding: 0;
+	display: flex;
+  min-height: 90vh;
+}
+
+#navigation {
+	width: 180px;
+	padding: 16px 0.6em 0 0.6em;
+	position: absolute;
+}
+
+#navigation #logo {
+	height: 200px;
+	text-align: center;
+	margin: 0 auto;
+	font-family: serif;
+	color:#555
+}
+
+#navigation #menu ul {
+	font-size: calc(var(--font-size)*0.8);
+	color: rgb(var(--main-color));
+}
+
+#contents {
+	flex-grow: 1;
+	width: 100%;
+	padding-left: 180px;
+	/* display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap; */
+}
+
+#header {
+	flex-grow: 1;
+	height: 80px;
+	display: flex;
+}
+
+#header .tab {
+	align-self: flex-end;
+	padding-left: 1px;
+	background-image: linear-gradient(to bottom,rgba(167,215,249,0) 0,rgb(var(--sub-color)) 100%);
+	background-repeat: no-repeat;
+	background-size: 1px 100%;
+}
+
+#header .tab ul {
+	float: left;
+	height: 100%;
+	list-style: none none;
+	margin: 0;
+	padding: 0;
+}
+
+#header .tab li {
+	background-image: linear-gradient(to top,rgb(var(--sub-color)) 0,#e8f2f8 1px,#ffffff 100%);
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	float: left;
+	display: block;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: 1.125em;
+	white-space: nowrap;
+}
+
+#header .tab li a {
+	display: block;
+	float: left;
+	position: relative;
+	padding-top: 1.25em;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-sizing: border-box;
+	height: 3em;
+	color: rgb(var(--main-color));
+	font-size: 0.8125em;
+	cursor: pointer;
+	background-position: right bottom;
+	background-image: linear-gradient(to bottom,rgba(167,215,249,0) 0,rgb(var(--sub-color)) 100%);
+	background-repeat: no-repeat;
+	background-size: 1px 100%;
+}
+
+#header .tab .current {
+	background: #ffffff;
+}
+
+#header ul {
+	float: left;
+	list-style: none none;
+	margin: 0;
+	padding: 0;
+}
+
+#header li {
+	float: left;
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.125em;
+    white-space: nowrap;
+}
+
+#contents_inner {
+	flex-grow: 1;
+	white-space: nowrap;
+	min-height: 80%;
+	background-color: #fff;
+	padding: 20px 24px 24px 24px;
+	margin-top: -1px;
+	border: 1px solid rgb(var(--sub-color));
+	border-right-width: 0;
+}
+#contents_inner .sql_example {
+	color: #777;
+	font-size: 80%;
+}
+
+#footer {
+	color: rgba(var(--main-color), 0.8);
+	font-size: calc(var(--font-size)*0.8);
+	text-align: left;
+	margin: 20px auto;
+	padding-left: 180px;
+	min-height: 13vh;
+}
+
+#footer p {
+	text-align: left;
+	top: 50%;
+	transform: translateY(50%);
+}
+
+/* medium screen */
+@media (max-width: 1000px) {
+}
+/* small screen */
+@media (max-width: 600px) {
+}
+/* small screen(horizontally) */
+@media (max-height: 400px) {
+}
